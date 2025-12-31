@@ -1,7 +1,7 @@
 Imperium is a high-performance financial intelligence interface designed to transform complex business data into clear, actionable insights through a human-centered, aesthetic design system.
 
 # Purpose
-The primary objective of Imperium is to bridge the gap between raw financial data and strategic decision-making. By prioritizing visual clarity and interaction design, we enable leaders to grasp their organization's financial health - ranging from cashflow analysis to event scheduling—without the cognitive load typically associated with legacy enterprise resource planning tools. This project serves as a foundational UI architecture for modern fintech applications.
+The primary objective of Imperium is to bridge the gap between raw financial data and strategic decision-making. By prioritizing visual clarity and interaction design, we enable leaders to grasp their organization's financial health - ranging from cashflow analysis to event scheduling - without the cognitive load typically associated with legacy enterprise resource planning tools. This project serves as a foundational UI architecture for modern fintech applications.
 
 > [!IMPORTANT]
 > The architecture relies on a Single Page Application (SPA) logic implemented via vanilla JavaScript (`script.js`). This ensures instant transitions between the Overview, Business, and Calendar views without requiring page reloads, preserving the application state and enhancing user focus.
