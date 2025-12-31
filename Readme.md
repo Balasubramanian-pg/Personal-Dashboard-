@@ -1,3 +1,5 @@
+# Personal Finance Management Dashboard
+
 Imperium is a high-performance financial intelligence interface designed to transform complex business data into clear, actionable insights through a human-centered, aesthetic design system.
 
 # Purpose
