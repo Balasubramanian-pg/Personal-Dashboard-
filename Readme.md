@@ -12,7 +12,7 @@ The primary objective of Imperium is to bridge the gap between raw financial dat
 Our development strategy centers on three pillars that drive utility and adoption:
 
 *   **Aesthetic Functionality:** Leveraging the "Afacad" typeface and glass-morphism effects to create a workspace that invites engagement rather than fatigue.
-*   **Data Democratization:** utilizing Chart.js to render complex datasets - such as spending breakdowns and cashflow trends—into intuitive visual narratives.
+*   **Data Democratization:** utilizing Chart.js to render complex datasets - such as spending breakdowns and cashflow trends - into intuitive visual narratives.
 *   **Responsive Fluidity:** Ensuring the dashboard delivers a consistent, high-fidelity experience across all form factors, from desktop command centers to mobile devices.
 
 > [!NOTE]
