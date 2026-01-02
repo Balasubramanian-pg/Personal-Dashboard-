@@ -1,140 +1,35 @@
-/* --- FONTS --- */
-@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap');
+/* --- Add this to your styles.css --- */
 
-:root {
-    --font-primary: 'Afacad', sans-serif;
-    --color-bg: #F8FAFC;
-    --color-sidebar: #FFFFFF;
-    --color-primary: #2563EB;
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-body {
-    font-family: var(--font-primary);
-    background-color: var(--color-bg);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* --- SCROLLBAR HIDING (Clean Look) --- */
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-.no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-/* --- SIDEBAR LOGIC --- */
-#sidebar {
-    transition: width 0.4s cubic-bezier(0.2, 0, 0, 1); /* Ultra smooth ease */
-    width: 260px;
-    flex-shrink: 0;
-    border-right: 1px solid rgba(226, 232, 240, 0.8);
-}
-
-/* Collapsed State */
-#sidebar.sidebar-collapsed {
-    width: 80px !important;
-}
-
-/* Elements to hide on collapse */
-#sidebar.sidebar-collapsed .hide-on-collapse {
-    opacity: 0;
-    pointer-events: none;
-    display: none;
-}
-
-/* Centering logic for icons when collapsed */
-#sidebar.sidebar-collapsed .logo-container {
-    justify-content: center;
-    padding-left: 0;
-}
-#sidebar.sidebar-collapsed .nav-item {
-    justify-content: center;
-    padding-left: 0;
-    padding-right: 0;
-}
-#sidebar.sidebar-collapsed .nav-item svg {
-    margin-right: 0;
-}
-
-/* --- NAVIGATION ITEMS --- */
-.nav-item {
-    position: relative;
-    font-weight: 500;
-    transition: var(--transition-smooth);
-    border: 1px solid transparent;
-}
-
-.nav-active {
-    background-color: #EFF6FF; /* Blue 50 */
-    color: #2563EB; /* Blue 600 */
-    box-shadow: 0 1px 2px rgba(37, 99, 235, 0.05);
-}
-
-.nav-inactive {
-    color: #64748B; /* Slate 500 */
-}
-
-.nav-inactive:hover {
-    background-color: #F8FAFC; /* Slate 50 */
-    color: #1E293B; /* Slate 800 */
-    transform: translateX(4px); /* Subtle nudge */
-}
-
-/* --- AESTHETIC CARDS (The "Cool" Stuff) --- */
-.card-aesthetic {
+/* Glass Card Variant */
+.card-glass {
     background: white;
-    border-radius: 1.25rem; /* 20px */
-    border: 1px solid rgba(226, 232, 240, 0.6);
-    box-shadow: 
-        0 4px 6px -1px rgba(0, 0, 0, 0.01), 
-        0 10px 15px -3px rgba(0, 0, 0, 0.02);
-    transition: var(--transition-smooth);
+    border-radius: 1.25rem;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 
+                0 10px 15px -3px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-aesthetic:hover {
-    transform: translateY(-4px);
-    box-shadow: 
-        0 20px 25px -5px rgba(0, 0, 0, 0.04), 
-        0 8px 10px -6px rgba(0, 0, 0, 0.01);
-    border-color: rgba(226, 232, 240, 1);
+.card-glass:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    border-color: rgba(203, 213, 225, 0.8);
 }
 
-/* --- ANIMATIONS --- */
-.fade-in {
-    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* --- CALENDAR SPECIFICS --- */
-.calendar-cell {
-    transition: var(--transition-smooth);
-}
-.calendar-cell:hover {
+/* Segmented Control Buttons */
+.segment-btn {
+    position: relative;
     z-index: 10;
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
 }
-
-.event-tooltip {
-    opacity: 0; 
-    visibility: hidden; 
-    transform: translateY(5px);
-    transition: all 0.2s ease-out;
+.segment-btn.active {
+    color: #0f172a;
+    font-weight: 600;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
 }
-.event-item:hover .event-tooltip {
-    opacity: 1; 
-    visibility: visible; 
-    transform: translateY(0);
+.segment-btn:not(.active):hover {
+    color: #475569;
+    background-color: rgba(241, 245, 249, 0.5);
 }
