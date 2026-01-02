@@ -1,0 +1,145 @@
+/* ==========================================
+   COMPLETE DASHBOARD STYLES
+   ========================================== */
+
+/* Base Styles */
+body {
+    font-family: 'Afacad', sans-serif;
+    background-color: #F8FAFC;
+}
+
+/* Sidebar Collapse States */
+#sidebar {
+    transition: width 0.3s ease, transform 0.3s ease;
+}
+
+#sidebar.collapsed {
+    width: 80px;
+}
+
+#sidebar.collapsed .hide-on-collapse {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: opacity 0.2s ease;
+}
+
+#sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+/* Logo Container */
+.logo-container {
+    transition: all 0.3s ease;
+}
+
+/* Fade In Animation */
+.fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+@keyframes fadeIn {
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Card Glass Effect */
+.card-glass {
+    background: white;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 
+                0 10px 15px -3px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-glass:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    border-color: rgba(203, 213, 225, 0.8);
+}
+
+/* Segmented Control Styles */
+.segment-btn {
+    position: relative;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.segment-btn.active {
+    color: #0f172a;
+    font-weight: 600;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.segment-btn:not(.active):hover {
+    color: #475569;
+    background-color: rgba(241, 245, 249, 0.5);
+}
+
+/* Navigation Items */
+.nav-item {
+    transition: all 0.2s ease;
+}
+
+.nav-active {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.nav-inactive {
+    color: #64748b;
+}
+
+.nav-inactive:hover {
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+/* Hide Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Calendar Grid Styles */
+#calendar-grid > div {
+    min-height: 80px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    #sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        z-index: 50;
+    }
+    
+    #sidebar.hidden {
+        transform: translateX(-100%);
+    }
+}
+
+/* Desktop Responsive */
+@media (min-width: 1024px) {
+    #sidebar.collapsed {
+        width: 80px;
+    }
+    
+    #sidebar:not(.collapsed) {
+        width: 256px;
+    }
+}
